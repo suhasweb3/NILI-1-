@@ -7,7 +7,7 @@ function Footer() {
         <h5 className="font-bold">About</h5>
         <p>How NILI works</p>
         <p>News Rooms</p>
-        <p>Investor's</p>
+        <p>Investors</p>
         <p>NILI Pro</p>
       </div>
       <div className="space-y-4 text-xs text-green-500">

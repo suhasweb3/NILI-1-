@@ -9,6 +9,7 @@ function Banner() {
         className=""
         layout="fill"
         objectFit="cover"
+        alt='some value'
       />
       <div className="absolute top-1/2 text-center w-full">
          
@@ -16,7 +17,7 @@ function Banner() {
           Not sure where not to go ? Perfect.
         </p>
         <button className=" block m-w-full mx-auto text-purple-500 bg-white px-10 py-4 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 duration-150">
-          Let's Go
+          Lets Go
         </button>
       </div>
     </div>

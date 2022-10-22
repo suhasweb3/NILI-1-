@@ -37,6 +37,7 @@ function Header() {
           width={200}
           objectFit="contain"
           objectPosition="left"
+          alt='some value'
         />
       </div>
       {/* center */}
