@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import LargeCard from "../components/LargeCard";
 import MediumCard from "../components/MediumCard";
 import SmallCard from "../components/SmallCard";
-export default function Home({ exploreData , gigsData }) {
+export default function Home({ exploreData , gigsData , partiesData}) {
   return (
     <div className="bg-black text-white">
       <Head>
@@ -34,7 +34,17 @@ export default function Home({ exploreData , gigsData }) {
         </section>
         <section>
           
-          <h2 className="text-4xl font-semibold py-8">Hot Happenings ⚡</h2>
+          <h2 className="text-4xl font-semibold py-8">Cool Parties 💃</h2>
+          <div className="flex space-x-3 overflow-scroll scrollbar-hide">
+{partiesData?.map((item) => (
+            <MediumCard img={item.img} title={ item.title} key={item.img} />
+          ))}
+          </div>
+          
+        </section>
+        <section>
+          
+          <h2 className="text-4xl font-semibold py-8">Hot Chillouts 💦⚡</h2>
           <div className="flex space-x-3 overflow-scroll scrollbar-hide">
 {gigsData?.map((item) => (
             <MediumCard img={item.img} title={ item.title} key={item.img} />
@@ -58,10 +68,12 @@ export async function getStaticProps() {
     (res) => res.json()
   );
   const gigsData = await fetch("http://localhost:3000/api/exploregigs").then((res) => res.json());
+   const partiesData = await fetch("http://localhost:3000/api/exploreParties").then((res) => res.json());
   return {
     props: {
       exploreData,
       gigsData,
+      partiesData,
     },
   };
 }
